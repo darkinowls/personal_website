@@ -19,21 +19,34 @@ class HomePage extends StatelessWidget {
             },
             icon: const Icon(Icons.menu),
           ),
+
+          elevation: 0,
           backgroundColor: Colors.transparent,
         ),
-        body: Column(
-          children: [
-            Container(
-                height: 600,
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(
-                          "assets/console_back.webp",
-                        ),
-                        fit: BoxFit.cover)),
-                child: const Center(child: Console()))
-          ],
+        body: SingleChildScrollView(
+          child:
+            Column(
+              children: [
+                Container(
+                    height: 600,
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                              "assets/console_back.webp",
+                            ),
+                            fit: BoxFit.cover)),
+                    child: const Center(child: Console())),
+
+
+                Container(
+                  height: 500,
+                  width: 100,
+                )
+
+              ],
+            )
+
         ));
   }
 }

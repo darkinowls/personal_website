@@ -36,11 +36,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            background: const Color.fromRGBO(40, 44, 52, 1),
-            brightness: Brightness.dark,
-            seedColor: Colors.teal,
-          ),
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: const Color.fromRGBO(40, 44, 52, 1),
+          primaryColor: Colors.teal,
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
