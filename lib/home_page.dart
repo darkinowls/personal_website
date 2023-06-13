@@ -25,20 +25,21 @@ class HomePage extends StatelessWidget {
                         ),
                         fit: BoxFit.cover)),
                 child: const Center(child: Console())),
-            Container(
+            const SizedBox(
               height: 500,
               width: 100,
             )
           ],
         )),
-        ListTile(
-          leading: IconButton(
+        Container(
+          padding: const EdgeInsets.all(15),
+          color: Colors.transparent,
+          child: IconButton(
             onPressed: () async {
               await zoomDrawerController.toggle!();
             },
             icon: const Icon(Icons.menu),
           ),
-          tileColor: Colors.transparent,
         ),
       ],
     ));

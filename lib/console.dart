@@ -1,15 +1,17 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:personal_website/fast_curve.dart';
 
 class Console extends StatelessWidget {
   const Console({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       clipBehavior: Clip.hardEdge,
-      width: 400,
+      width: (screenWidth < 600)? 300: 500,
       height: 300,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -19,6 +21,7 @@ class Console extends StatelessWidget {
               color: Colors.black,
               blurRadius: 10,
               spreadRadius: 1,
+              offset: Offset(2, 2),
             )
           ]),
       child: const Column(
@@ -44,7 +47,7 @@ class _ConsoleHeader extends StatelessWidget {
             children: [
               const Spacer(),
               Container(
-                width: 200,
+                width: 150,
                 height: 30,
                 padding:
                     const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -150,11 +153,16 @@ class _ConsoleBodyState extends State<_ConsoleBody> {
                         fadeInEnd: 0,
                         fadeOutBegin: 1),
                     TypewriterAnimatedText("Flutter developer",
-                        speed: const Duration(milliseconds: 0)),
+                        speed: const Duration(milliseconds: 100),
+                        curve: const FastCurve(), cursor: '|'),
                     TypewriterAnimatedText("Python developer",
-                        speed: const Duration(milliseconds: 0)),
+                        speed: const Duration(milliseconds: 100),
+                        curve: const FastCurve(), cursor: '|'
+                    ),
                     TypewriterAnimatedText("Software engineer",
-                        speed: const Duration(milliseconds: 0)),
+                        speed: const Duration(milliseconds: 100),
+                        curve: const FastCurve(), cursor: '|'
+                    ),
                   ],
                   onFinished: () => setState(() => startForthLine = true),
                 ),
@@ -171,9 +179,9 @@ class _ConsoleBodyState extends State<_ConsoleBody> {
                   pause: const Duration(milliseconds: 0),
                   animatedTexts: [
                     FadeAnimatedText("|",
-                        duration: const Duration(milliseconds: 1000),
-                        fadeOutBegin: 0.8,
-                        fadeInEnd: 0.2),
+                        duration: const Duration(milliseconds: 1500),
+                        fadeOutBegin: 0.9,
+                        fadeInEnd: 0.1),
                   ],
                 ),
               ],
