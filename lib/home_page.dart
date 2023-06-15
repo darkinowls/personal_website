@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:personal_website/console.dart';
+import 'package:personal_website/project_card.dart';
 
 class HomePage extends StatelessWidget {
   final ZoomDrawerController zoomDrawerController;
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
             child: Column(
           children: [
             Container(
-                height: 600,
+                height: 500,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
@@ -26,8 +27,25 @@ class HomePage extends StatelessWidget {
                         fit: BoxFit.cover)),
                 child: const Center(child: Console())),
             const SizedBox(
-              height: 500,
-              width: 100,
+              height: 50,
+            ),
+            const Center(
+                child: Text(
+              "My projects",
+              style:
+                  TextStyle(fontSize: 32, decoration: TextDecoration.underline),
+            )),
+
+            const SizedBox(
+              height: 25,
+            ),
+            const Wrap(
+              children: [
+                ProjectCard(),
+                ProjectCard(),
+                ProjectCard(),
+                ProjectCard(),
+              ],
             )
           ],
         )),

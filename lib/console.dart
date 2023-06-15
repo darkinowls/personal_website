@@ -47,7 +47,7 @@ class _ConsoleHeader extends StatelessWidget {
             children: [
               const Spacer(),
               Container(
-                width: 150,
+                width: 175,
                 height: 30,
                 padding:
                     const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -154,15 +154,16 @@ class _ConsoleBodyState extends State<_ConsoleBody> {
                         fadeOutBegin: 1),
                     TypewriterAnimatedText("Flutter developer",
                         speed: const Duration(milliseconds: 100),
-                        curve: const FastCurve(), cursor: '|'),
+                        curve: const FastCurve(),
+                        cursor: '|'),
                     TypewriterAnimatedText("Python developer",
                         speed: const Duration(milliseconds: 100),
-                        curve: const FastCurve(), cursor: '|'
-                    ),
+                        curve: const FastCurve(),
+                        cursor: '|'),
                     TypewriterAnimatedText("Software engineer",
                         speed: const Duration(milliseconds: 100),
-                        curve: const FastCurve(), cursor: '|'
-                    ),
+                        curve: const FastCurve(),
+                        cursor: '|'),
                   ],
                   onFinished: () => setState(() => startForthLine = true),
                 ),
