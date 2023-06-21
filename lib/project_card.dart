@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:photo_view/photo_view.dart';
-import 'package:photo_view/photo_view_gallery.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -20,48 +18,31 @@ class ProjectCard extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: Wrap(
                   children: [
-                    SizedBox(
+                    Container(
                       width: 320,
                       child: Wrap(
                         alignment: WrapAlignment.center,
                         spacing: 10,
                         runSpacing: 10,
                         children: [
-                          SizedBox(
-                            width: 150,
-                            child: PhotoView(
-                                imageProvider: const AssetImage(
-                                    "assets/cinema_house/auth.webp")),
-                          ),
-                          SizedBox(
-                            width: 150,
-                            child: PhotoView(
-                                imageProvider: const AssetImage(
-                                    "assets/cinema_house/movies.webp")),
-                          ),
-                          SizedBox(
-                            width: 150,
-                            child: PhotoView(
-                                imageProvider: const AssetImage(
-                                    "assets/cinema_house/settings.webp")),
-                          ),
-                          SizedBox(
-                            width: 150,
-                            child: PhotoView(
-                                imageProvider: const AssetImage(
-                                    "assets/cinema_house/tickets.webp")),
-                          ),
+                          Image.asset("assets/cinema_house/auth.webp",
+                              width: 150),
+                          Image.asset("assets/cinema_house/movies.webp",
+                              width: 150),
+                          Image.asset("assets/cinema_house/settings.webp",
+                              width: 150),
+                          Image.asset("assets/cinema_house/tickets.webp",
+                              width: 150),
                         ],
                       ),
                     ),
                     ConstrainedBox(
                       constraints:
-                          const BoxConstraints(minWidth: 100, maxWidth: 200),
+                      const BoxConstraints(minWidth: 100, maxWidth: 200),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
-                              "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+                          const Text("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
                           Container(
                             decoration: const ShapeDecoration(
                                 shape: StadiumBorder(),
