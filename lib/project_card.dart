@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -18,21 +20,37 @@ class ProjectCard extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: Wrap(
                   children: [
-                    Container(
+                    SizedBox(
                       width: 320,
                       child: Wrap(
                         alignment: WrapAlignment.center,
                         spacing: 10,
                         runSpacing: 10,
                         children: [
-                          Image.asset("assets/cinema_house/auth.webp",
-                              width: 150),
-                          Image.asset("assets/cinema_house/movies.webp",
-                              width: 150),
-                          Image.asset("assets/cinema_house/settings.webp",
-                              width: 150),
-                          Image.asset("assets/cinema_house/tickets.webp",
-                              width: 150),
+                          SizedBox(
+                            width: 150,
+                            child: PhotoView(
+                                imageProvider: const AssetImage(
+                                    "assets/cinema_house/auth.webp")),
+                          ),
+                          SizedBox(
+                            width: 150,
+                            child: PhotoView(
+                                imageProvider: const AssetImage(
+                                    "assets/cinema_house/movies.webp")),
+                          ),
+                          SizedBox(
+                            width: 150,
+                            child: PhotoView(
+                                imageProvider: const AssetImage(
+                                    "assets/cinema_house/settings.webp")),
+                          ),
+                          SizedBox(
+                            width: 150,
+                            child: PhotoView(
+                                imageProvider: const AssetImage(
+                                    "assets/cinema_house/tickets.webp")),
+                          ),
                         ],
                       ),
                     ),
@@ -42,7 +60,8 @@ class ProjectCard extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+                          const Text(
+                              "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
                           Container(
                             decoration: const ShapeDecoration(
                                 shape: StadiumBorder(),
