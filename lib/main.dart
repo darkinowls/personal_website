@@ -34,7 +34,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Darkinowls',
+
         theme: ThemeData(
           brightness: Brightness.dark,
           scaffoldBackgroundColor: const Color.fromRGBO(40, 44, 52, 1),
