@@ -72,6 +72,8 @@ flutter:
   assets:
     - assets/console_back.webp
     - assets/cinema_house/
+    - assets/seagull_client/
+    - assets/spacex_test/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -41,10 +41,26 @@ class HomePage extends StatelessWidget {
             ),
             const Wrap(
               children: [
-                ProjectCard(),
-                ProjectCard(),
-                ProjectCard(),
-                ProjectCard(),
+                ProjectCard(
+                  projectName: "Cinema House",
+                  text: "AAAAAAAAA",
+                  projectNameSnake: "cinema_house" ,
+                ),
+                ProjectCard(
+                  projectName: "Seagull drive (client)",
+                  text: "AAAAAAAAA",
+                  projectNameSnake: "seagull_client" ,
+                ),
+                ProjectCard(
+                  projectName: "SpaceX test",
+                  text: "AAAAAAAAA",
+                  projectNameSnake: "spacex_test" ,
+                ),
+                ProjectCard(
+                  projectName: "Cinema House",
+                  text: "AAAAAAAAA",
+                  projectNameSnake: "cinema_house" ,
+                ),
               ],
             )
           ],
