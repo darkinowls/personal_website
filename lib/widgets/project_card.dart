@@ -1,5 +1,9 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../custom_widgets/hero_dialog_route.dart';
 
 class ProjectCard extends StatelessWidget {
   final String projectName;
@@ -36,14 +40,9 @@ class ProjectCard extends StatelessWidget {
                         spacing: 10,
                         runSpacing: 10,
                         children: [
-                          Image.asset("assets/$projectNameSnake/1.webp",
-                              width: 150),
-                          Image.asset("assets/$projectNameSnake/2.webp",
-                              width: 150),
-                          Image.asset("assets/$projectNameSnake/3.webp",
-                              width: 150),
-                          Image.asset("assets/$projectNameSnake/4.webp",
-                              width: 150),
+                          for (int i = 1; i <= 4; i++)
+                            TouchableImage(
+                                imagePath: "assets/$projectNameSnake/$i.webp"),
                         ],
                       ),
                     ),
@@ -70,6 +69,36 @@ class ProjectCard extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TouchableImage extends StatelessWidget {
+  final String imagePath;
+
+  const TouchableImage({super.key, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, HeroDialogRoute(
+          builder: (context) {
+            return Dialog(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              child: Hero(
+                  transitionOnUserGestures: true,
+                  tag: imagePath,
+                  child: Image.asset(imagePath, width: 250)),
+            );
+          },
+        ));
+      },
+      child: Hero(
+        tag: imagePath,
+        child: Image.asset(imagePath, width: 150),
       ),
     );
   }

@@ -57,9 +57,9 @@ class HomeScreen extends StatelessWidget {
                   projectNameSnake: "spacex_test",
                 ),
                 ProjectCard(
-                  projectName: "Cinema House",
+                  projectName: "Coconut",
                   text: "AAAAAAAAA",
-                  projectNameSnake: "cinema_house",
+                  projectNameSnake: "coconut",
                 ),
               ],
             )

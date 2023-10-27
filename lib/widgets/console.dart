@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:personal_website/fast_curve.dart';
+import 'package:personal_website/custom_widgets/fast_curve.dart';
 
 class Console extends StatelessWidget {
   const Console({Key? key}) : super(key: key);
