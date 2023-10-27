@@ -38,7 +38,7 @@
             background-color: #34373DFF;
             }
 
-        .loader {
+        #loader {
           border: 10px solid #f3f3f3; /* Light grey */
           border-top: 10px solid #009688; /* Blue */
           border-radius: 50%;
@@ -67,18 +67,20 @@
 <body>
 
 
-<div class="loader"></div>
+<div id="loader"></div>
 
 <script>
 
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
+      document.getElementById('loader').remove();
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
+
             appRunner.runApp();
           });
         }
