@@ -8,13 +8,19 @@ import '../custom_widgets/hero_dialog_route.dart';
 class ProjectCard extends StatelessWidget {
   final String projectName;
   final String text;
-  final String projectNameSnake;
+  final String githubProjectNameSnake;
+
+  final String? anotherTitle;
+
+  final String? anotherLink;
 
   const ProjectCard(
       {required this.projectName,
       required this.text,
-      required this.projectNameSnake,
-      Key? key})
+      required this.githubProjectNameSnake,
+      Key? key,
+      this.anotherTitle,
+      this.anotherLink})
       : super(key: key);
 
   @override
@@ -41,8 +47,9 @@ class ProjectCard extends StatelessWidget {
                         runSpacing: 10,
                         children: [
                           for (int i = 1; i <= 4; i++)
-                            TouchableImage(
-                                imagePath: "assets/$projectNameSnake/$i.webp"),
+                            _TouchableImage(
+                                imagePath:
+                                    "assets/$githubProjectNameSnake/$i.webp"),
                         ],
                       ),
                     ),
@@ -54,12 +61,19 @@ class ProjectCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(15),
+                            padding: const EdgeInsets.all(25),
                             child: Text(text),
                           ),
                           _GithubButton(
-                            projectNameSnake: projectNameSnake,
-                          )
+                            projectNameSnake: githubProjectNameSnake,
+                          ),
+                          if (anotherTitle != null && anotherLink != null)
+                            const SizedBox(height: 25),
+                          if (anotherTitle != null && anotherLink != null)
+                            _AnotherButton(
+                              title: anotherTitle!,
+                              link: anotherLink!,
+                            )
                         ],
                       ),
                     )
@@ -74,10 +88,10 @@ class ProjectCard extends StatelessWidget {
   }
 }
 
-class TouchableImage extends StatelessWidget {
+class _TouchableImage extends StatelessWidget {
   final String imagePath;
 
-  const TouchableImage({super.key, required this.imagePath});
+  const _TouchableImage({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -132,6 +146,38 @@ class _GithubButton extends StatelessWidget {
           child: const Text(
             "Find on Github",
             style: TextStyle(color: Colors.black),
+          )),
+    );
+  }
+}
+
+class _AnotherButton extends StatelessWidget {
+  final String title;
+  final String link;
+
+  const _AnotherButton({super.key, required this.title, required this.link});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const ShapeDecoration(
+          shape: StadiumBorder(),
+          gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              colors: [
+                Colors.blueAccent,
+                Colors.yellow,
+              ])),
+      child: ElevatedButton(
+          onPressed: () => launchUrl(Uri.parse(link)),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+          ),
+          child: Text(
+            title,
+            style: const TextStyle(color: Colors.black),
           )),
     );
   }
