@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
-import 'package:personal_website/console.dart';
-import 'package:personal_website/project_card.dart';
+import 'package:personal_website/main.dart';
+import 'package:personal_website/screen_controller.dart';
+import 'package:personal_website/widgets/console.dart';
+import 'package:personal_website/widgets/project_card.dart';
 
-class HomePage extends StatelessWidget {
-  final ZoomDrawerController zoomDrawerController;
-
-  const HomePage(this.zoomDrawerController, {super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
         body: Stack(
       children: [
         SingleChildScrollView(
+          controller: ScreenController.scrollOf(context),
             child: Column(
           children: [
             Container(
@@ -35,7 +36,6 @@ class HomePage extends StatelessWidget {
               style:
                   TextStyle(fontSize: 32, decoration: TextDecoration.underline),
             )),
-
             const SizedBox(
               height: 25,
             ),
@@ -44,22 +44,22 @@ class HomePage extends StatelessWidget {
                 ProjectCard(
                   projectName: "Cinema House",
                   text: "AAAAAAAAA",
-                  projectNameSnake: "cinema_house" ,
+                  projectNameSnake: "cinema_house",
                 ),
                 ProjectCard(
                   projectName: "Seagull drive (client)",
                   text: "AAAAAAAAA",
-                  projectNameSnake: "seagull_client" ,
+                  projectNameSnake: "seagull_client",
                 ),
                 ProjectCard(
                   projectName: "SpaceX test",
                   text: "AAAAAAAAA",
-                  projectNameSnake: "spacex_test" ,
+                  projectNameSnake: "spacex_test",
                 ),
                 ProjectCard(
                   projectName: "Cinema House",
                   text: "AAAAAAAAA",
-                  projectNameSnake: "cinema_house" ,
+                  projectNameSnake: "cinema_house",
                 ),
               ],
             )
@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
           color: Colors.transparent,
           child: IconButton(
             onPressed: () async {
-              await zoomDrawerController.toggle!();
+              await ScreenController.zoomOf(context).toggle!();
             },
             icon: const Icon(Icons.menu),
           ),

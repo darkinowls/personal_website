@@ -11,7 +11,7 @@ class Console extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       clipBehavior: Clip.hardEdge,
-      width: (screenWidth < 600)? 300: 500,
+      width: (screenWidth < 600)? 325: 500,
       height: 300,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
