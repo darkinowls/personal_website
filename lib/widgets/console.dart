@@ -42,7 +42,7 @@ class _ConsoleHeader extends StatelessWidget {
       height: 50,
       child: Row(
         children: [
-          SizedBox(width: 25),
+          const SizedBox(width: 25),
           Column(
             children: [
               const Spacer(),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HeroDialogRoute<T> extends PageRoute<T> {
   HeroDialogRoute({required this.builder}) : super();

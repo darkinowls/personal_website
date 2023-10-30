@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/config.dart';
 import 'package:personal_website/consts.dart';
-import 'package:personal_website/main.dart';
 import 'package:personal_website/screen_controller.dart';
 import 'package:personal_website/widgets/console.dart';
 import 'package:personal_website/widgets/project_card.dart';

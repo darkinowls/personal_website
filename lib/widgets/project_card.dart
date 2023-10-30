@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -91,7 +90,7 @@ class ProjectCard extends StatelessWidget {
 class _TouchableImage extends StatelessWidget {
   final String imagePath;
 
-  const _TouchableImage({super.key, required this.imagePath});
+  const _TouchableImage({required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +154,7 @@ class _AnotherButton extends StatelessWidget {
   final String title;
   final String link;
 
-  const _AnotherButton({super.key, required this.title, required this.link});
+  const _AnotherButton({required this.title, required this.link});
 
   @override
   Widget build(BuildContext context) {
